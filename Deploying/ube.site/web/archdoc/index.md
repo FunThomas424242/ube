@@ -1,5 +1,5 @@
 Architekturdokumentation
 ===========================
 
-1. [Einführung & Ziele](1_Ziele.md)
-9. [Entscheidungen](9_Entscheidungen.md)
++ [Einführung & Ziele](1_Ziele.md)
++ [Entscheidungen](9_Entscheidungen.md)
