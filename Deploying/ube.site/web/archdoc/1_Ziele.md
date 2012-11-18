@@ -42,5 +42,9 @@ vom Projekt des Entwicklers als mehr welche vom Buildsystem.
 + Das System sollte Plattformunabhängig arbeiten.
 + Das System sollte OSGI ready sein um zukünftige SWE Methoden unterstützen zu 
 können.
++ Der Build muss reproduzierbar sein, auch nach Jahren
++ Um reproduzierbare Builds zu ermöglichen muss das System die Möglichkeit 
+bieten Artifakte von Remote Repositories herunterzuladen und in selbst 
+verwaltete Repositories zu transferieren.
 
 [Content](index.md) , [9. Entscheidungen](9_Entscheidungen.md) 
