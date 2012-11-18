@@ -47,4 +47,10 @@ können.
 bieten Artifakte von Remote Repositories herunterzuladen und in selbst 
 verwaltete Repositories zu transferieren.
 
+2. Roadmap
+----------
+12/2013 UBE baut sich selbst
+12/2014 UBE wird zum Bau eines weiteren Projektes (Pilotprojekt unabhängig von 
+UBE) eingesetzt. 
+
 [Content](index.md) , [9. Entscheidungen](9_Entscheidungen.md) 

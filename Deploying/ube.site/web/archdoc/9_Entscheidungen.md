@@ -84,6 +84,49 @@ Alle Projekte sind als Eclipse Plugin Projekte zu erstellen. Jedes dieser
 Projekte muss dann einen ANT Task realisieren. Details müssen noch evaluiert 
 werden.
 
+3. Wie kann erweitert werden?
+-----------------------------
 
+Entscheidungsfindung
+--------------------
+ANT Task können auf 2 Arten realisiert werden:
+1. Ableiten einer Klasse von org.apache.tools.ant.Task
+2. Bereitstellen einer Methode mit Signatur public void execute()
+
+Variante 2 bietet den Vorteil nicht von der ANT Bibliothek abhängig zu sein 
+dafür erkauft man sich den Nachteil das beim Aufruf des Tasks ANT über 
+Reflection die Methode starten muss.
+
+Variante 1 bietet den Vorteil, dass kein Reflection benötigt wird dafür ist man
+nun von der ANT Bibliothek abhängig und muss diese in der Liste seiner 
+Abhängigkeiten aufführen. 
+
+Eine Abhängigkeit von ANT bringt gerade im OSGI Umfeld aktuell noch Probleme. Da
+kein Buildwerkzeug aktuell alle Programmtypen (Eclipse Plugin, OSGI Bundle,
+einfaches JAR, Rich Client, ...) unterstützt. 
+
+Entscheidung
+------------
+18.11.2012 Die Erweiterung des Systems muss für beide Varianten von ANT Tasks
+möglich sein. Bei Bedarf sind Wrapper bereitzustellen.
+
+4. Welches Buildsystem wird benutzt?
+------------------------------------
+
+Entscheidungsfindung
+--------------------
+Das Buildwerkzeug wird nur temporär benötigt bis UBE sich selbst bauen kann. 
+Da UBE auf DSLs arbeiten soll, scheint es günstig BuildBoost zu verwenden, da 
+dieses auf Eclipse Plugins und DSLs spezialisiert ist. 
+
+Bei Verwendung von BuildBoost ist klar, dass kein Generator zur Anwendung kommen
+darf. Da hierzu bislang keine persönlich und erfolgreich durchgeführten 
+Projekte vorliegen. Versuche mit EMFText und Acceleo Projekten scheiterten, die
+EMFText Projekte ließen sich problemlos bauen aber die Acceleo Projekte konnten
+nicht integriert werden.
+
+Entscheidung
+------------
+18.11.2012 Es wird mit BuildBoost begonnen und später UBE selbst genutzt.
 
 [Content](index.md) , [1. Ziele](1_Ziele.md) 
