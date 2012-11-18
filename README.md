@@ -3,5 +3,5 @@ ube
 
 Universal Build Engine
 
-[Architekturentscheidungen](../ube/blob/master/Deploying/ube.site/web/archdoc/9_Entscheidungen.md)
+[Architekturdokumentation](https://github.com/FunThomas424242/ube/blob/master/Deploying/ube.site/web/archdoc/index.md)
 
