@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<project name="ube-task" basedir="." default="use">    
+
+	<property name="ube.core.dir" value="../../Plugins/ube.core"/>
+
+	
+    <target name="use" description="Use the Task" >
+        <taskdef name="ube" classname="ube.core.task.UBELauncher" classpath="${ube.core.dir}/target/${ant.project.name}.jar"/>
+        <ube/>
+    </target>
+
+</project>
