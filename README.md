@@ -3,4 +3,5 @@ ube
 
 Universal Build Engine
 
-[Architekturentscheidungen](/Deploying/ube.site/web/archdoc/9_Entscheidungen.md)
+[Architekturentscheidungen](../ube/blob/master/Deploying/ube.site/web/archdoc/9_Entscheidungen.md)
+
