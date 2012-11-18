@@ -1,4 +1,4 @@
-1 Einführung und Ziele
+I Einführung und Ziele
 ===========================
 
 1. Was soll das Programm leisten
@@ -42,4 +42,5 @@ vom Projekt des Entwicklers als mehr welche vom Buildsystem.
 + Das System sollte Plattformunabhängig arbeiten.
 + Das System sollte OSGI ready sein um zukünftige SWE Methoden unterstützen zu 
 können.
- 
+
+[Content](index.md) , [9. Entscheidungen](9_Entscheidungen.md) 
