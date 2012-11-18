@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+   <feature url="features/gh.funthomas424242.svgd.feature_1.0.0.jar" id="gh.funthomas424242.svgd.feature" version="1.0.0">
+      <category name="funthomas424242"/>
+   </feature>
+   <category-def name="funthomas424242" label="funthomas424242"/>
+</site>
