@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <site>
-   <feature url="features/ube.feature_1.0.0.qualifier.jar" id="ube.feature" version="1.0.0.qualifier">
+   <feature url="features/ube.feature_1.0.0.201211192100.jar" id="ube.feature" version="1.0.0.201211192100">
       <category name="funthomas424242"/>
    </feature>
    <category-def name="funthomas424242" label="funthomas424242"/>
