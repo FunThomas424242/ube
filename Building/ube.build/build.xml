@@ -31,14 +31,12 @@
 		</script>
 		<echo>Prop:${ube.core.dir}/${core.jar.name}</echo>
 
-
-
-
 		<taskdef name="ube" classname="ube.core.task.UBELauncher" classpath="${ube.core.dir}/${core.jar.name}" />
 		<typedef name="condition.equals" classname="org.apache.tools.ant.taskdefs.condition.Equals" />
 		
 		<ube>
-			<condition.equals arg1="${debug}" arg2="true" />
+			<condition.equals arg1="true" arg2="true" />
+			<condition.equals arg1="blah" arg2="blah" />
 		</ube>
 		
 	</target>
