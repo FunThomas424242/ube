@@ -1,13 +1,16 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
-<project name="ube-task" basedir="." default="use">    
+<project name="ube-task" basedir="." default="use">
 
-	<property name="ube.core.dir" value="${basedir}/../../Deploying/ube.site/plugins/"/>
-	<property name="ube.core.jar.pattern" value="**/ube.core_*.jar"/>
-	<property name="core.jar.name" value="ube-core.jar"/>
-	
-    <target name="use" description="Use the Task" >
-    	
-    	 <script language="javascript"> <![CDATA[
+	<property name="ube.core.dir" value="${basedir}/../../Deploying/ube.site/plugins/" />
+	<property name="ube.core.jar.pattern" value="**/ube.core_*.jar" />
+	<property name="core.jar.name" value="ube-core.jar" />
+
+	<target name="use" description="Use the Task">
+
+
+
+		<script language="javascript">
+			<![CDATA[
     	 	 // Bestimme das JAR der Core Plugin Klasse
     	 	 importClass(java.io.File);
     	 	
@@ -24,13 +27,20 @@
     	      srcFiles = ds.getIncludedFiles();
     	 	  var corejarName = srcFiles[0];
     	 	  project.setProperty("core.jar.name",srcFiles[0] );
-    	 	]]></script>
-    	<echo>Prop:${ube.core.dir}/${core.jar.name}</echo>
-    	
-    	
-    	
-        <taskdef name="ube" classname="ube.core.task.UBELauncher" classpath="${ube.core.dir}/${core.jar.name}"/>
-        <ube/>
-    </target>
+    	 	]]>
+		</script>
+		<echo>Prop:${ube.core.dir}/${core.jar.name}</echo>
+
+
+
+
+		<taskdef name="ube" classname="ube.core.task.UBELauncher" classpath="${ube.core.dir}/${core.jar.name}" />
+		<typedef name="condition.equals" classname="org.apache.tools.ant.taskdefs.condition.Equals" />
+		
+		<ube>
+			<condition.equals arg1="${debug}" arg2="true" />
+		</ube>
+		
+	</target>
 
 </project>
