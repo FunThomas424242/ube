@@ -32,7 +32,10 @@ public class UBELauncher extends Task {
 		}
 		// Launch the UBE System
 		System.out.println("Hallo UBE");
+		// Start Felix
+		final FelixLauncher felixLauncher = new FelixLauncher();
 		// Read the ube build files
 
 	}
+
 }

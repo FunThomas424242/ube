@@ -2,43 +2,27 @@
 <project name="ube-task" basedir="." default="use">
 
 	<property name="ube.core.dir" value="${basedir}/../../Deploying/ube.site/plugins/" />
-	<property name="ube.core.jar.pattern" value="**/ube.core_*.jar" />
-	<property name="core.jar.name" value="ube-core.jar" />
-
+	<property name="ube.felix.dir" value="${basedir}/../../Plugins/ube.felix/bin/" />
+	
 	<target name="use" description="Use the Task">
 
+		<path id="plugin.jars">
+			<fileset dir="${ube.core.dir}">
+				<include name="**/*.jar" />
+			</fileset>
+			<fileset dir="${ube.felix.dir}">
+				<include name="**/*.jar" />
+			</fileset>
+		</path>
 
-
-		<script language="javascript">
-			<![CDATA[
-    	 	 // Bestimme das JAR der Core Plugin Klasse
-    	 	 importClass(java.io.File);
-    	 	
-    	 	 // Access to Ant-Properties by their names
-    	 	 ubecoredir  = project.getProperty("ube.core.dir");
-    	 	 jarPattern =  project.getProperty("ube.core.jar.pattern");
-    	 	
-    		  fs = project.createDataType("fileset");
-    	      fs.setDir( new File(ubecoredir) );
-    	      fs.setIncludes(jarPattern);
-
-    	      // Get the files (array) of that fileset
-    	      ds = fs.getDirectoryScanner(project);
-    	      srcFiles = ds.getIncludedFiles();
-    	 	  var corejarName = srcFiles[0];
-    	 	  project.setProperty("core.jar.name",srcFiles[0] );
-    	 	]]>
-		</script>
-		<echo>Prop:${ube.core.dir}/${core.jar.name}</echo>
-
-		<taskdef name="ube" classname="ube.core.task.UBELauncher" classpath="${ube.core.dir}/${core.jar.name}" />
+		<taskdef name="ube" classname="ube.core.task.UBELauncher" classpathref="plugin.jars" />
 		<typedef name="condition.equals" classname="org.apache.tools.ant.taskdefs.condition.Equals" />
-		
+
 		<ube>
 			<condition.equals arg1="true" arg2="true" />
 			<condition.equals arg1="blah" arg2="blah" />
 		</ube>
-		
+
 	</target>
 
 </project>
