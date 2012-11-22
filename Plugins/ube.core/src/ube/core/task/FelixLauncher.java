@@ -29,6 +29,7 @@ public class FelixLauncher {
 			m_felix = new Felix(configMap);
 			// Now start Felix instance.
 			m_felix.start();
+			System.err.println("Felix started.");
 		} catch (Exception ex) {
 			System.err.println("Could not create framework: " + ex);
 			ex.printStackTrace();
