@@ -67,37 +67,11 @@ public class UBELauncher extends Task {
 				.hasNext();) {
 			Condition condition = iterator.next();
 			areTrue = areTrue && condition.eval();
-			System.out.println("Condition:" + condition.eval());
+			System.out.println("Condition is " + condition.eval());
 		}
 		// never null because autoboxing of primitive date type
 		return areTrue;
 	}
-
-	// private void shutdownFelixEngine() {
-	// System.out.println("Try to shutdown the Engine, state is "
-	// + FelixEngineSingleton.getFelixLauncher().getEngineStatus());
-	// try {
-	// FelixEngineSingleton.getFelixLauncher().shutdownApplication();
-	// } catch (BundleException e) {
-	// // TODO Auto-generated catch block
-	//
-	// e.printStackTrace();
-	// } catch (InterruptedException e) {
-	// // TODO Auto-generated catch block
-	// e.printStackTrace();
-	// }
-	// System.out.println("Shutdown has finished in state "
-	// + FelixEngineSingleton.getFelixLauncher().getEngineStatus());
-	// }
-
-	// private void startFelixEngine() {
-	// // Launch the UBE System
-	// System.out.println("UBE is ready to starting Felix.");
-	// // Start Felix
-	// FelixEngineSingleton.getFelixLauncher();
-	// // Read the ube build files
-	// System.out.println("Felix has started Felix by UBE.");
-	// }
 
 	private void startOSGIEngine() {
 

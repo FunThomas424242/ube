@@ -81,11 +81,6 @@
 
 	<target name="processBuild" description="Start the UBE Framework" depends="init">
 
-		<ube>
-			<condition.equals arg1="true" arg2="true" />
-			<condition.equals arg1="blah" arg2="blah" />
-		</ube>
-
 		<antcall target="start.osgi.engine" />
 		<ant antfile="${ube.build.dir}/ube_stage_1.xml" />
 		<antcall target="stop.osgi.engine" />

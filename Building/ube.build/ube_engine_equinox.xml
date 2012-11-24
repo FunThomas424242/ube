@@ -5,16 +5,22 @@
 	<target name="start_engine" description="Start the Equinox Engine">
 
 		<echo>Starting Equinox Engine</echo>
-		<ube Shutdown="false" />
+		<ube Shutdown="false">
+			<condition.equals arg1="true" arg2="true" />
+			<condition.equals arg1="blah" arg2="blah" />
+		</ube>
 
 	</target>
 
 
 
 	<target name="stop_engine" description="Stop the Equinox Engine">
-		
+
 		<echo>Stopping Equinox Engine</echo>
-		<ube Shutdown="true" />
+		<ube Shutdown="true">
+			<condition.equals arg1="true" arg2="true" />
+			<condition.equals arg1="blah" arg2="blah" />
+		</ube>
 
 	</target>
 
