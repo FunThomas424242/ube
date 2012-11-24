@@ -1,14 +1,15 @@
 package ube.core.task;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
 
 import org.apache.tools.ant.Task;
 import org.apache.tools.ant.taskdefs.condition.Condition;
+import org.eclipse.osgi.launch.Equinox;
 import org.osgi.framework.BundleException;
-
-import ube.core.felix.FelixEngineSingleton;
 
 public class UBELauncher extends Task {
 
@@ -17,6 +18,8 @@ public class UBELauncher extends Task {
 	public void add(Condition c) {
 		conditions.add(c);
 	}
+
+	private static Equinox osgiEngine = null;
 
 	private Boolean shutdown = Boolean.FALSE;
 
@@ -38,11 +41,13 @@ public class UBELauncher extends Task {
 		// Control Start/Shutdown of Felix
 		if (Boolean.TRUE.equals(this.shutdown)) {
 
-			shutdownFelixEngine();
+			// shutdownFelixEngine();
+			shutdownOSGIEngine();
 
 		} else {
 
-			startFelixEngine();
+			// startFelixEngine();
+			startOSGIEngine();
 
 		}
 
@@ -60,36 +65,59 @@ public class UBELauncher extends Task {
 		return areTrue;
 	}
 
-	private void shutdownFelixEngine() {
-		System.out.println("Try to shutdown the Engine, state is "
-				+ FelixEngineSingleton.getFelixLauncher().getEngineStatus());
-		try {
-			FelixEngineSingleton.getFelixLauncher().shutdownApplication();
-		} catch (BundleException e) {
-			// TODO Auto-generated catch block
+	// private void shutdownFelixEngine() {
+	// System.out.println("Try to shutdown the Engine, state is "
+	// + FelixEngineSingleton.getFelixLauncher().getEngineStatus());
+	// try {
+	// FelixEngineSingleton.getFelixLauncher().shutdownApplication();
+	// } catch (BundleException e) {
+	// // TODO Auto-generated catch block
+	//
+	// e.printStackTrace();
+	// } catch (InterruptedException e) {
+	// // TODO Auto-generated catch block
+	// e.printStackTrace();
+	// }
+	// System.out.println("Shutdown has finished in state "
+	// + FelixEngineSingleton.getFelixLauncher().getEngineStatus());
+	// }
 
-			e.printStackTrace();
-		} catch (InterruptedException e) {
+	// private void startFelixEngine() {
+	// // Launch the UBE System
+	// System.out.println("UBE is ready to starting Felix.");
+	// // Start Felix
+	// FelixEngineSingleton.getFelixLauncher();
+	// // Read the ube build files
+	// System.out.println("Felix has started Felix by UBE.");
+	// }
+
+	private void startOSGIEngine() {
+
+		System.out.println("UBE is ready to starting OSGI engine.");
+		final Map map = new HashMap();
+		osgiEngine = new Equinox(map);
+		try {
+			osgiEngine.init();
+			osgiEngine.start();
+
+		} catch (BundleException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		System.out.println("Shutdown has finished in state "
-				+ FelixEngineSingleton.getFelixLauncher().getEngineStatus());
+		System.out.println("OSGI engine has been started by UBE.");
+
 	}
 
-	private void startFelixEngine() {
-		// Launch the UBE System
-		System.out.println("UBE is ready to starting Felix.");
-		// Start Felix
-		FelixEngineSingleton.getFelixLauncher();
-		// Read the ube build files
-		System.out.println("Felix has started Felix by UBE.");
+	private void shutdownOSGIEngine() {
+		System.out.println("UBE is trying to stop the OSGI engine.");
+		try {
+			osgiEngine.stop();
+		} catch (BundleException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		System.out.println("OSGI engine has been stopped by UBE.");
 	}
-
-	// public void shutdown(String[] args) throws BundleException,
-	// InterruptedException {
-	// felixLauncher.shutdownApplication();
-	// }
 
 	public static void main(String[] args) {
 		UBELauncher launcher = new UBELauncher();

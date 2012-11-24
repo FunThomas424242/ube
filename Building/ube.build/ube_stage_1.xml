@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<project name="ube_stage_1" default="processBuild">
+
+
+	<target name="process_stage_1" description="Start and Stop the UBE Framework">
+
+		<ube Shutdown="false" />
+
+		<ube Shutdown="true" />
+
+	</target>
+
+</project>

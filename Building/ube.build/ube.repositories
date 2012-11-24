@@ -11,7 +11,7 @@ git:https://github.com/DevBoost/BuildBoost.git!Extensions/UpdateSite/
  
 //Only dependencies without the rootRepository ->duplicate target exception
 //git:https://github.com/FunThomas424242/myDSL.parent.git
-get:https://raw.github.com/FunThomas424242/felix-for-eclipse/master/bin/felix.jar
+
 
 // EMFText
 git:https://github.com/DevBoost/EMFText.git!Core/Access/
@@ -25,11 +25,19 @@ git:https://github.com/DevBoost/CommentTemplate.git!Core/
 // JaMoPP
 git:https://github.com/DevBoost/JaMoPP.git!Core/
 
-// Eclipse Platform
-get:http://ftp-stud.fht-esslingen.de/pub/Mirrors/eclipse/eclipse/downloads/drops4/R-4.2-201206081400/eclipse-platform-4.2-win32-x86_64.zip
-get:http://ftp-stud.fht-esslingen.de/pub/Mirrors/eclipse/eclipse/downloads/drops4/R-4.2-201206081400/eclipse-4.2-delta-pack.zip
-// JDT
-get:http://ftp-stud.fht-esslingen.de/pub/Mirrors/eclipse/eclipse/downloads/drops4/R-4.2-201206081400/org.eclipse.jdt-4.2.zip
+
+// Eclipse 4.2 Platform
+//get:http://ftp-stud.fht-esslingen.de/pub/Mirrors/eclipse/eclipse/downloads/drops4/R-4.2-201206081400/eclipse-platform-4.2-win32-x86_64.zip
+//get:http://ftp-stud.fht-esslingen.de/pub/Mirrors/eclipse/eclipse/downloads/drops4/R-4.2-201206081400/eclipse-4.2-delta-pack.zip
+// part JDT
+//get:http://ftp-stud.fht-esslingen.de/pub/Mirrors/eclipse/eclipse/downloads/drops4/R-4.2-201206081400/org.eclipse.jdt-4.2.zip
+
+//Eclipse 3.7.2 Platform
+get:http://ftp-stud.fht-esslingen.de/pub/Mirrors/eclipse/eclipse/downloads/drops/R-3.7.2-201202080800/eclipse-platform-3.7.2-win32.zip
+get:http://ftp-stud.fht-esslingen.de/pub/Mirrors/eclipse/eclipse/downloads/drops/R-3.7.2-201202080800/eclipse-3.7.2-delta-pack.zip
+// part JDT
+get:http://ftp-stud.fht-esslingen.de/pub/Mirrors/eclipse/eclipse/downloads/drops/R-3.7.2-201202080800/org.eclipse.jdt-3.7.2.zip
+
 // EMF
 get:http://ftp-stud.fht-esslingen.de/pub/Mirrors/eclipse/modeling/emf/emf/downloads/drops/2.8.0/R201206080554/emf-xsd-SDK-2.8.0.zip
 // EMF Validation (core plugin and feature)

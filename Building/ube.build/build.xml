@@ -22,29 +22,18 @@
 
 	</target>
 
-
-	<target name="stopp" description="Stopp the UBE Framework" depends="init">
-
-		<ube Shutdown="true" />
-
-	</target>
-
-
 	<target name="processBuild" description="Start the UBE Framework" depends="init">
-
-
-
 
 		<ube Shutdown="false">
 			<condition.equals arg1="true" arg2="true" />
 			<condition.equals arg1="blah" arg2="blah" />
 		</ube>
 
-		<ube Shutdown="true" />
+		<ant antfile="Building/ube.build/ube_stage_1.xml" target="process_stage_1" />
 
 	</target>
 
-	<target name="build.site" description="Build the update site">
+	<!--target name="build.site" description="Build the update site">
 
 		<path id="eclipse.launcher">
 			<fileset dir="${eclipse.home}/plugins">
@@ -61,6 +50,6 @@
 			<jvmarg value="-Dp2.repo=${repository}" />
 		</java>
 
-	</target>
+	</target-->
 
 </project>

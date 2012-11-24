@@ -7,6 +7,6 @@ Bundle-Activator: ube.core.Activator
 Require-Bundle: org.eclipse.ui,
  org.eclipse.core.runtime,
  org.apache.ant;bundle-version="1.8.2",
- ube.felix;bundle-version="1.0.0"
+ org.eclipse.equinox.launcher;bundle-version="1.2.0"
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
