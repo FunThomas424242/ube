@@ -7,7 +7,7 @@
 		<echoproperties/>
 		<taskdef name="emftext" classname="ube.core.task.EMFTextTask" classpath="${plugin.jars}" />
 
-		<emftext file="build.ube" />
+		<emftext file="${ube.build.dir}/build.ube" />
 			
 		
 	</target>
