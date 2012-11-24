@@ -1,4 +1,4 @@
-package ube.core.task;
+package ube.core.felix;
 
 import org.osgi.framework.Bundle;
 import org.osgi.framework.BundleActivator;

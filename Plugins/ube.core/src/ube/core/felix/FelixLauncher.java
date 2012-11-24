@@ -1,4 +1,4 @@
-package ube.core.task;
+package ube.core.felix;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -8,7 +8,9 @@ import java.util.Map;
 import org.apache.felix.framework.Felix;
 import org.apache.felix.framework.util.FelixConstants;
 import org.osgi.framework.Bundle;
+import org.osgi.framework.BundleActivator;
 import org.osgi.framework.BundleException;
+
 
 public class FelixLauncher {
 	private FelixActivator m_activator = null;
@@ -16,10 +18,10 @@ public class FelixLauncher {
 
 	public FelixLauncher() {
 		// Create a configuration property map.
-		Map configMap = new HashMap();
+		Map<String, Object> configMap = new HashMap<String, Object>();
 		// Create host activator;
 		m_activator = new FelixActivator();
-		List list = new ArrayList();
+		List<BundleActivator> list = new ArrayList<BundleActivator>();
 		list.add(m_activator);
 		configMap.put(FelixConstants.SYSTEMBUNDLE_ACTIVATORS_PROP, list);
 
@@ -48,5 +50,9 @@ public class FelixLauncher {
 		// host application.
 		m_felix.stop();
 		m_felix.waitForStop(0);
+	}
+
+	public int getEngineStatus() {
+		return m_felix.getState();
 	}
 }

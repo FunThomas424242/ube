@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
-<project name="ube-task" basedir="." default="use">
+<project name="ube-task" basedir="." default="processBuild">
 
 	<property name="ube.core.dir" value="${basedir}/../../Deploying/ube.site/plugins/" />
 	<property name="ube.felix.dir" value="${basedir}/../../Plugins/ube.felix/bin/" />
-	
-	<target name="use" description="Use the Task">
+
+	<target name="init" description="Stopp the UBE Framework">
 
 		<path id="plugin.jars">
 			<fileset dir="${ube.core.dir}">
@@ -18,10 +18,27 @@
 		<taskdef name="ube" classname="ube.core.task.UBELauncher" classpathref="plugin.jars" />
 		<typedef name="condition.equals" classname="org.apache.tools.ant.taskdefs.condition.Equals" />
 
-		<ube>
+	</target>
+
+
+	<target name="stopp" description="Stopp the UBE Framework" depends="init">
+
+		<ube Shutdown="true" />
+
+	</target>
+
+
+	<target name="processBuild" description="Start the UBE Framework" depends="init">
+
+
+
+
+		<ube Shutdown="false">
 			<condition.equals arg1="true" arg2="true" />
 			<condition.equals arg1="blah" arg2="blah" />
 		</ube>
+
+		<ube Shutdown="true" />
 
 	</target>
 
