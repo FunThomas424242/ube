@@ -21,13 +21,18 @@ public class UBELauncher extends Task {
 
 	private static Equinox osgiEngine = null;
 
-	private Boolean shutdown = Boolean.FALSE;
+	private Boolean shutdown = null;
 
-	public void setShutdown(Boolean makeShutdown) throws BundleException,
+	public void setShutdown(String makeShutdown) throws BundleException,
 			InterruptedException {
-		if (makeShutdown == null || Boolean.TRUE.equals(makeShutdown)) {
+		if ("true".equals(makeShutdown)) {
 			this.shutdown = Boolean.TRUE;
 		}
+
+		if ("false".equals(makeShutdown)) {
+			this.shutdown = Boolean.FALSE;
+		}
+		System.out.println("Attribute shutdown set to " + this.shutdown);
 
 	}
 
@@ -36,6 +41,7 @@ public class UBELauncher extends Task {
 
 		if (!checkPreConditions()) {
 			System.out.println("Conditions of Task does not satisfied.");
+			return;
 		}
 
 		// Control Start/Shutdown of Felix
@@ -44,7 +50,9 @@ public class UBELauncher extends Task {
 			// shutdownFelixEngine();
 			shutdownOSGIEngine();
 
-		} else {
+		}
+
+		if (Boolean.FALSE.equals(this.shutdown)) {
 
 			// startFelixEngine();
 			startOSGIEngine();
