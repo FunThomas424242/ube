@@ -1,25 +1,56 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <project name="ube-task" basedir="../.." default="processBuild">
 
-	<property name="eclipse.home" value="C:\Program Files\eclipse\eclipse-SDK-3.7.1-win32-test" />
+	<property name="eclipse.home" value="C:/Program Files/eclipse/eclipse-SDK-3.7.1-win32-test/" />
 	<property name="osgi.engine.equinox" value="true" />
 	<property name="osgi.engine.felix" value="false" />
 
 	<property name="ube.build.dir" value="${basedir}/Building/ube.build/" />
 	<property name="ube.core.dir" value="${basedir}/Plugins/ube.core/" />
 	<property name="ube.site.dir" value="${basedir}/Deploying/ube.site/" />
-	
+
 	<property name="ube.site.plugins.dir" value="${ube.site.dir}/plugins/" />
 
 
 	<target name="init" description="Stopp the UBE Framework">
 
+		<!-- store path to newest launcher JAR in path id 'newest.equinox.launcher.path.id' -->
+		<path id="equinox.launcher.path">
+			<first count="1">
+				<sort>
+					<fileset dir="${eclipse.home}/plugins" includes="**/org.eclipse.equinox.launcher_*.jar" />
+					<reverse xmlns="antlib:org.apache.tools.ant.types.resources.comparators">
+						<date />
+					</reverse>
+				</sort>
+			</first>
+		</path>
+		<!-- turn the path into a property -->
+		<property name="equinox.launcher.jar" refid="equinox.launcher.path" />
+		
+		<!-- store path to newest launcher JAR in path id 'newest.equinox.launcher.path.id' -->
+			<path id="osgi.framework.path">
+				<first count="1">
+					<sort>
+						<fileset dir="${eclipse.home}/plugins" includes="**/org.eclipse.osgi_*.jar" />
+						<reverse xmlns="antlib:org.apache.tools.ant.types.resources.comparators">
+							<date />
+						</reverse>
+					</sort>
+				</first>
+			</path>
+			<!-- turn the path into a property -->
+			<property name="osgi.framework.jar" refid="osgi.framework.path" />
 
+		<!-- you can now reference the jar through the property ${equinox.launcher.jar.location} -->
+		<echo message="Using equinox launcher jar: ${equinox.launcher.jar}" />
 
 		<path id="plugin.jars">
 			<fileset dir="${ube.site.plugins.dir}">
 				<include name="**/*.jar" />
 			</fileset>
+			<fileset file="${equinox.launcher.jar}" />
+			<fileset file="${osgi.framework.jar}" />
 		</path>
 
 		<taskdef name="ube" classname="ube.core.task.UBELauncher" classpathref="plugin.jars" />
@@ -63,15 +94,10 @@
 
 
 	<target name="site.create">
-		
-		<p2.publish.featuresAndBundles
-		    metadataRepository="file:/repository/location"
-		    artifactRepository="file:/repository/location"
-		    publishArtifacts="true"
-		    compress="true"
-		    source="/bundles/and/features/location/" />
-		
-		
+
+		<p2.publish.featuresAndBundles metadataRepository="file:/repository/location" artifactRepository="file:/repository/location" publishArtifacts="true" compress="true" source="/bundles/and/features/location/" />
+
+
 	</target>
 
 
