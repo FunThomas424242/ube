@@ -1,0 +1,11 @@
+model 
+ 
+datatype String;
+datatype Datum ;
+
+entity Person {
+	att String vorname;
+	att String nachname;
+	att Datum birthday;
+	
+}

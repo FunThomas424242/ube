@@ -5,7 +5,11 @@
 	<target name="process_stage_1" description="Processing of build stage 1.">
 
 		<echoproperties/>
+		<taskdef name="emftext" classname="ube.core.task.EMFTextTask" classpath="${plugin.jars}" />
 
+		<emftext file="build.ube" />
+			
+		
 	</target>
 
 </project>

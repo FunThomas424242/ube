@@ -10,6 +10,8 @@
 	<property name="ube.site.dir" value="${basedir}/Deploying/ube.site/" />
 
 	<property name="ube.site.plugins.dir" value="${ube.site.dir}/plugins/" />
+	
+	<property name="ube.build.file" value="${ube.build.dir}/build.ube" />
 
 
 	<target name="init" description="Stopp the UBE Framework">
@@ -45,15 +47,16 @@
 		<!-- you can now reference the jar through the property ${equinox.launcher.jar.location} -->
 		<echo message="Using equinox launcher jar: ${equinox.launcher.jar}" />
 
-		<path id="plugin.jars">
+		<path id="plugin.jars.path">
 			<fileset dir="${ube.site.plugins.dir}">
 				<include name="**/*.jar" />
 			</fileset>
 			<fileset file="${equinox.launcher.jar}" />
 			<fileset file="${osgi.framework.jar}" />
 		</path>
-
-		<taskdef name="ube" classname="ube.core.task.UBELauncher" classpathref="plugin.jars" />
+		<property name="plugin.jars" refid="plugin.jars.path" />
+		
+		<taskdef name="ube" classname="ube.core.task.UBELauncher" classpath="${plugin.jars}" />
 		<typedef name="condition.equals" classname="org.apache.tools.ant.taskdefs.condition.Equals" />
 
 	</target>
