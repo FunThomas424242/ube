@@ -6,7 +6,10 @@
 	<property name="osgi.engine.felix" value="false" />
 
 	<property name="ube.build.dir" value="${basedir}/Building/ube.build/" />
-	<property name="ube.core.dir" value="${basedir}/Deploying/ube.site/plugins/" />
+	<property name="ube.core.dir" value="${basedir}/Plugins/ube.core/" />
+	<property name="ube.site.dir" value="${basedir}/Deploying/ube.site/" />
+	
+	<property name="ube.site.plugins.dir" value="${ube.site.dir}/plugins/" />
 
 
 	<target name="init" description="Stopp the UBE Framework">
@@ -14,7 +17,7 @@
 
 
 		<path id="plugin.jars">
-			<fileset dir="${ube.core.dir}">
+			<fileset dir="${ube.site.plugins.dir}">
 				<include name="**/*.jar" />
 			</fileset>
 		</path>
@@ -25,21 +28,21 @@
 	</target>
 
 	<target name="start.equinox" description="Start the Equinox Engine" if="${osgi.engine.equinox}">
-		<ant antfile="Building/ube.build/ube_engine_equinox.xml" target="start_engine"/>
+		<ant antfile="Building/ube.build/ube_engine_equinox.xml" target="start_engine" />
 	</target>
 
 	<target name="start.felix" description="Start the Felix Engine" if="${osgi.engine.felix}">
-		<ant antfile="Building/ube.build/ube_engine_felix.xml" target="start_engine"/>
+		<ant antfile="Building/ube.build/ube_engine_felix.xml" target="start_engine" />
 	</target>
 
 	<target name="start.osgi.engine" description="Start the OSGI Engine" depends="start.felix,start.equinox" />
 
 	<target name="stop.equinox" description="Stop the Equinox Engine" if="${osgi.engine.equinox}">
-		<ant antfile="Building/ube.build/ube_engine_equinox.xml" target="stop_engine"/>
+		<ant antfile="Building/ube.build/ube_engine_equinox.xml" target="stop_engine" />
 	</target>
 
 	<target name="stop.felix" description="Stop the Felix Engine" if="${osgi.engine.felix}">
-		<ant antfile="Building/ube.build/ube_engine_felix.xml" target="stop_engine"/>
+		<ant antfile="Building/ube.build/ube_engine_felix.xml" target="stop_engine" />
 	</target>
 
 	<target name="stop.osgi.engine" description="Start the OSGI Engine" depends="stop.felix,stop.equinox" />
@@ -53,9 +56,24 @@
 		</ube>
 
 		<antcall target="start.osgi.engine" />
-		<ant antfile="${ube.build.dir}/ube_stage_1.xml"  />
+		<ant antfile="${ube.build.dir}/ube_stage_1.xml" />
 		<antcall target="stop.osgi.engine" />
 
 	</target>
+
+
+	<target name="site.create">
+		
+		<p2.publish.featuresAndBundles
+		    metadataRepository="file:/repository/location"
+		    artifactRepository="file:/repository/location"
+		    publishArtifacts="true"
+		    compress="true"
+		    source="/bundles/and/features/location/" />
+		
+		
+	</target>
+
+
 
 </project>
