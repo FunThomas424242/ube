@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
-<project name="ube-task" basedir="." default="processBuild">
+<project name="ube-task" basedir="../.." default="processBuild">
 
 	<property name="eclipse.home" value="C:\Program Files\eclipse\eclipse-SDK-3.7.1-win32-test" />
-	<property name="ube.core.dir" value="${basedir}/../../Deploying/ube.site/plugins/" />
-	<property name="ube.felix.dir" value="${basedir}/../../Plugins/ube.felix/bin/" />
+	<property name="ube.core.dir" value="${basedir}/Deploying/ube.site/plugins/" />
+	<property name="ube.felix.dir" value="${basedir}/Plugins/ube.felix/bin/" />
 
 
 	<target name="init" description="Stopp the UBE Framework">
