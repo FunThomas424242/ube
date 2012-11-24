@@ -1,13 +1,30 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
-<project name="ube_stage_1" default="processBuild">
+<project name="ube_stage_1" default="process_stage_1">
 
 
-	<target name="process_stage_1" description="Start and Stop the UBE Framework">
+	<target name="process_stage_1" description="Processing of build stage 1.">
 
-		<ube Shutdown="false" />
-
-		<ube Shutdown="true" />
+		<echoproperties/>
 
 	</target>
 
 </project>
+
+<!--target name="build.site" description="Build the update site">
+
+		<path id="eclipse.launcher">
+			<fileset dir="${eclipse.home}/plugins">
+				<include name="**/org.eclipse.equinox.launcher_*.jar" />
+			</fileset>
+		</path>
+
+
+		<java jar="C:\Program Files\eclipse\eclipse-SDK-3.7.1-win32-test\plugins\org.eclipse.equinox.launcher_1.2.0.v20110502.jar" fork="true" failonerror="true">
+			<arg value="-application" />
+			<arg value="org.eclipse.ant.core.antRunner" />
+			<arg value="-buildfile" />
+			<arg file="${basedir}/process_artifacts.xml" />
+			<jvmarg value="-Dp2.repo=${repository}" />
+		</java>
+
+	</target-->
