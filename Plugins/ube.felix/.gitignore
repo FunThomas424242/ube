@@ -1,3 +1,4 @@
 *.class
 /felix-cache
 /target
+/.settings
