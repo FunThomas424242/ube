@@ -7,8 +7,11 @@
 
 	<property name="ube.build.dir" value="${basedir}/Building/ube.build/" />
 	<property name="ube.core.dir" value="${basedir}/Plugins/ube.core/" />
+	<property name="ube.dsl.dir" value="${basedir}/Plugins/ube.dsl/" />
+	<property name="ube.dsl.resource.dir" value="${basedir}/Plugins/ube.dsl.resource/" />
 	<property name="ube.site.dir" value="${basedir}/Deploying/ube.site/" />
-
+	
+	
 	<property name="ube.site.plugins.dir" value="${ube.site.dir}/plugins/" />
 	
 	<property name="ube.build.file" value="${ube.build.dir}/build.ube" />

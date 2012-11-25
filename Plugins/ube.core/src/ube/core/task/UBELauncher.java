@@ -32,7 +32,7 @@ public class UBELauncher extends Task {
 		if ("false".equals(makeShutdown)) {
 			this.shutdown = Boolean.FALSE;
 		}
-		System.out.println("Attribute shutdown set to " + this.shutdown);
+		log("Attribute shutdown set to " + this.shutdown);
 
 	}
 
@@ -40,7 +40,7 @@ public class UBELauncher extends Task {
 	public void execute() {
 
 		if (!checkPreConditions()) {
-			System.out.println("Conditions of Task does not satisfied.");
+			log("Conditions of Task does not satisfied.");
 			return;
 		}
 
@@ -67,7 +67,7 @@ public class UBELauncher extends Task {
 				.hasNext();) {
 			Condition condition = iterator.next();
 			areTrue = areTrue && condition.eval();
-			System.out.println("Condition is " + condition.eval());
+			log("Condition is " + condition.eval());
 		}
 		// never null because autoboxing of primitive date type
 		return areTrue;
@@ -75,8 +75,8 @@ public class UBELauncher extends Task {
 
 	private void startOSGIEngine() {
 
-		System.out.println("UBE is ready to starting OSGI engine.");
-		final Map map = new HashMap();
+		log("UBE is ready to starting OSGI engine.");
+		final Map<String, ?> map = new HashMap<String, Object>();
 		osgiEngine = new Equinox(map);
 		try {
 			osgiEngine.init();
@@ -86,19 +86,19 @@ public class UBELauncher extends Task {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		System.out.println("OSGI engine has been started by UBE.");
+		log("OSGI engine has been started by UBE.");
 
 	}
 
 	private void shutdownOSGIEngine() {
-		System.out.println("UBE is trying to stop the OSGI engine.");
+		log("UBE is trying to stop the OSGI engine.");
 		try {
 			osgiEngine.stop();
 		} catch (BundleException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		System.out.println("OSGI engine has been stopped by UBE.");
+		log("OSGI engine has been stopped by UBE.");
 	}
 
 	public static void main(String[] args) {

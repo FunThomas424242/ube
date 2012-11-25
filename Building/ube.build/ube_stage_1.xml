@@ -4,12 +4,34 @@
 
 	<target name="process_stage_1" description="Processing of build stage 1.">
 
-		<echoproperties/>
-		<taskdef name="emftext" classname="ube.core.task.EMFTextTask" classpath="${plugin.jars}" />
+		<path id="emf.plugins.path">
+			<first count="1">
+				<sort>
+					<fileset dir="${eclipse.home}/plugins" includes="**/org.eclipse.emf.ecore_*.jar" />
+					<reverse xmlns="antlib:org.apache.tools.ant.types.resources.comparators">
+						<date />
+					</reverse>
+				</sort>
+			</first>
+		</path>
 
-		<emftext file="${ube.build.dir}/build.ube" />
-			
-		
+
+		<path id="emf.plugin.jars">
+			<path path="${plugin.jars}" />
+			<path refid="emf.plugins.path" />
+			<path path="${ube.dsl.resource.dir}/bin" />
+			<path path="${ube.dsl.dir}/bin" />
+			<fileset dir="${eclipse.home}/plugins" includes="**/org.eclipse.emf*.jar" />
+				
+		</path>
+
+
+		<echoproperties />
+		<taskdef name="emftext" classname="ube.core.task.EMFTextTask" classpathref="emf.plugin.jars" />
+
+		<!--emftext file="${ube.build.dir}/build.ube" /-->
+
+
 	</target>
 
 </project>
