@@ -59,7 +59,7 @@
 		</path>
 		<property name="plugin.jars" refid="plugin.jars.path" />
 		
-		<taskdef name="ube" classname="ube.core.task.UBELauncher" classpath="${plugin.jars}" />
+		<taskdef name="ube" classname="ube.core.task.EquinoxLauncherTask" classpath="${plugin.jars}" />
 		<typedef name="condition.equals" classname="org.apache.tools.ant.taskdefs.condition.Equals" />
 
 	</target>

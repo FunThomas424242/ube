@@ -11,7 +11,7 @@ import org.apache.tools.ant.taskdefs.condition.Condition;
 import org.eclipse.osgi.launch.Equinox;
 import org.osgi.framework.BundleException;
 
-public class UBELauncher extends Task {
+public class EquinoxLauncherTask extends Task {
 
 	private final List<Condition> conditions = new ArrayList<Condition>();
 
@@ -102,7 +102,7 @@ public class UBELauncher extends Task {
 	}
 
 	public static void main(String[] args) {
-		UBELauncher launcher = new UBELauncher();
+		EquinoxLauncherTask launcher = new EquinoxLauncherTask();
 		launcher.execute();
 	}
 
