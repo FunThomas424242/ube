@@ -72,11 +72,11 @@ Von den bekannten Buildtools
 + MAVEN
 + Gradle
 + BuildBoost
-+ jboss.forge (ein Aufgaben fremdes aber interessantes System)
++ JBoss.Forge (ein Aufgaben fremdes aber interessantes System)
 sind ANT und MAVEN die für Java geeignetsten. BuildBoost ist für Eclipse Plugins 
 geeignet basiert allerdings auch auf einer Sammlung externer ANT Tasks. 
 
-08.09.2013 Aktuell wird jboss.forge evaluiert. Dieses System wurde zum Aufsetzen
+08.09.2013 Aktuell wird [JBoss Forge](http://forge.jboss.org/) evaluiert. Dieses System wurde zum Aufsetzen
 von Projekten entwickelt. Es basiert und nutzt maven. Auf dem ersten Blick sieht 
 es so aus, als wird mit dem Start des Systems (per Console) ein Container gestartet.
 Die Vermutung ergibt sich wenn die Details zum Schreiben von Forge Plugins 
