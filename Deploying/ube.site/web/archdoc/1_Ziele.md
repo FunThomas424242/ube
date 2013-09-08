@@ -33,15 +33,17 @@ können.
 diese auf ein Minimum beschränken. Doppeltes kopieren von Dateien auf der Platte 
 muss verhindert werden. 
 + Die Aktionen des Systems sollen für den Entwickler nachvollziehbar sein. Ein 
-massivier Download wie er initial bei Maven stattfindet - muss dem Entwickler 
+massivier Download wie er initial bei Maven stattfindet, muss dem Entwickler 
 erklärt werden. Letzlich sind die dort geladenen Abhängigkeiten nur wenige 
 vom Projekt des Entwicklers als mehr welche vom Buildsystem.
 + Das System muss von der Community erweiterbar sein (Hosting auf Github)
 + Das System muss ständig QS gesichert werden - Einbindung in CI (Travis).
 + Das System muss lokal testbar und debuggbar sein
 + Das System sollte Plattformunabhängig arbeiten.
-+ Das System sollte OSGI ready sein um zukünftige SWE Methoden unterstützen zu 
++ Das System sollte OSGI ready sein um zukünftige SWE Methoden unterstützen zu
 können.
++ Das System soll sowohl Consolen Benutzer wie auch GUI verwöhnte Nutzer 
+zufriedenstellen.
 + Der Build muss reproduzierbar sein, auch nach Jahren
 + Um reproduzierbare Builds zu ermöglichen muss das System die Möglichkeit 
 bieten Artifakte von Remote Repositories herunterzuladen und in selbst 

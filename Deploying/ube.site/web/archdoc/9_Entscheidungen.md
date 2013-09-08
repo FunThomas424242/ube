@@ -3,6 +3,7 @@ IX. Architekturentscheidungen
 
 1. Welchen Namen soll das Projekt bekommen?
 -------------------------------------------
+
 + Der Name soll ausdrücken, dass das Programm explizit für einen Prozess zum 
 Bauen und Verteilen von Artifakten gedacht ist. Es wird zunächst explizit 
 nicht von Programmen gesprochen, denn es sollen auch andere Dinge
@@ -12,6 +13,7 @@ werden können.
 
 Mögliche Vorschläge
 -------------------
+
 + UBE = Universal Build Engine
 + UBT = Universal Build Tool
 + UBS = Universal Build System
@@ -38,6 +40,7 @@ Der Begriff Engine bringt auch mehr den generischen Build Prozess zum Ausdruck.
 
 Entscheidung
 ------------
+
 18.11.2012 Entscheidung für UBE
 
 
@@ -46,6 +49,7 @@ Entscheidung
 
 Vorschläge
 ----------
+
 + OSGI Bundle
 + Eclipse Plugin
 + ANT Task
@@ -68,8 +72,20 @@ Von den bekannten Buildtools
 + MAVEN
 + Gradle
 + BuildBoost
++ jboss.forge (ein Aufgaben fremdes aber interessantes System)
 sind ANT und MAVEN die für Java geeignetsten. BuildBoost ist für Eclipse Plugins 
 geeignet basiert allerdings auch auf einer Sammlung externer ANT Tasks. 
+
+08.09.2013 Aktuell wird jboss.forge evaluiert. Dieses System wurde zum Aufsetzen
+von Projekten entwickelt. Es basiert und nutzt maven. Auf dem ersten Blick sieht 
+es so aus, als wird mit dem Start des Systems (per Console) ein Container gestartet.
+Die Vermutung ergibt sich wenn die Details zum Schreiben von Forge Plugins 
+betrachtet werden. Hier können Instanzen wie das Projekt und ein pom.xml injiziert
+werden. Die Zielrichtung sind eigentlich java ee Projekte die im JBoss laufen,
+dennoch scheint eine Nutzung als Build Engine möglich zu sein. Durch die 
+Erweiterbarkeit über wirklich einfach zu schreibende Plugins ist auch eine
+Unterstützung von ANT und Gradle denkbar. Es muss eine ausführliche Evaluierung
+stattfinden. Idealerweise über ein Prototyping.
 
 Entscheidung
 ------------
