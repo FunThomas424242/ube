@@ -24,4 +24,4 @@ Welcher Aufwand entsteht insgesamt um das Szenario umzusetzen? Welche Entwurfsen
 den Aufwand für ein solches Szenario zu verringern?
 
 
-[Content](index.md) , [1. Ziele](1_Ziele.md) [9. Architekturbewertung](A_Architekturbewertung.md)
+[Content](index.md) , [1. Ziele](1_Ziele.md) , [9. Entscheidungen](9_Entscheidungen.md)
