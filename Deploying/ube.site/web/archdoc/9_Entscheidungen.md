@@ -196,4 +196,4 @@ Entscheidung
 ------------
 18.11.2012 Es wird mit BuildBoost begonnen und später UBE selbst genutzt.
 
-[Content](index.md) , [1. Ziele](1_Ziele.md) [A Architekturbewertung](A_Architekturbewertung.md)
+[Content](index.md) , [1. Ziele](1_Ziele.md), [A Architekturbewertung](A_Architekturbewertung.md)
