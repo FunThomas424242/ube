@@ -56,4 +56,4 @@ verwaltete Repositories zu transferieren.
 * 12/2015 UBE wird zum Bau eines weiteren Projektes (Pilotprojekt unabhängig von 
 UBE) eingesetzt. 
 
-[Content](index.md) , [9. Entscheidungen](9_Entscheidungen.md) 
+[Content](index.md) , [9. Entscheidungen](9_Entscheidungen.md), [A Architekturbewertung](A_Architekturbewertung.md) 
