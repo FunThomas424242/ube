@@ -1,6 +1,57 @@
 IX. Architekturentscheidungen
 =============================
 
+Allgemeines Vorgehen
+--------------------
+
+Es wird nach dem [arc42 Template](http://www.arc42.de/template/page29/template/10-decisions.html) vorgegangen. Jede Entscheidung ist nach folgendem Muster zu treffen:
+
+Dokumentieren Sie hier alle wesentlichen Entwurfsentscheidungen und deren Gründe! Es gehört zu den Entscheidungen, welche Entwurfsentscheidungen relevant genug für die Dokumentation sind!! (sozusagen eine Meta-Entscheidung...)
+
+Es ist wünschenswert, alle wichtigen Entwurfsentscheidungen geschlossen nachlesen zu können. Wägen Sie ab, inwiefern Entwurfsentscheidungen hier zentral dokumentiert werden sollen oder wo eine lokale Beschreibung (z.B in der Whitebox-Sicht von Bausteinen) sinnvoller ist. Vermeiden Sie auf jeden Fall redundante Texte.
+
+Als Form wählen Sie meist eine informelle Liste, möglichst nach Wichtigkeit und Tragweite der Entscheidungen für den Leser aufgebaut.
+Jede einzelne Entscheidung könnten Sie in folgender Form erläutern (danke an Stefan Zörner für diesen Vorschlag!):
+
+Fragestellung
+-------------
+
+* Was genau ist das Problem?
+* Warum ist es für die Architektur relevant?
+* Welche Auswirkung hat die Entscheidung?
+
+Rahmenbedingungen
+-----------------
+
+* Welche festen Randbedingungen haben Sie einzuhalten?
+* Welche EInflussfaktoren sind zu beachten?
+
+Annahmen
+--------
+
+* Welche Annahmen haben Sie getroffen?
+* Welche Annahmen können wie vorab überprüft werden?
+* Mit welchen Risiken müssen Sie rechnen?
+
+Betrachtete Alternativen
+------------------------
+
+* Welche Lösungsoptionen ziehen Sie in die nähere Auswahl?
+* Wie bewerten Sie jede einzelne?
+* Welche Optionen schließen Sie bewusst aus?
+
+Entscheidung
+------------
+
+* Wer (wenn nicht Sie selbst) hat die Entscheidung getroffen?
+* Wie ist sie begründet?
+* Wann wurde entschieden?
+
+
+Entscheidungen
+==============
+
+
 1. Welchen Namen soll das Projekt bekommen?
 -------------------------------------------
 
@@ -145,4 +196,4 @@ Entscheidung
 ------------
 18.11.2012 Es wird mit BuildBoost begonnen und später UBE selbst genutzt.
 
-[Content](index.md) , [1. Ziele](1_Ziele.md) 
+[Content](index.md) , [1. Ziele](1_Ziele.md) [A Architekturbewertung](A_Architekturbewertung.md)
