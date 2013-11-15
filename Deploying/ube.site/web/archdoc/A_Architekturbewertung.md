@@ -22,3 +22,6 @@ Entwurfsentscheidungen sind betroffen? Auf welche Qualitätsanforderungen wirkt 
 Qualitätsanforderungen beeinflusst? Welche Geschäftsziele sind noch erreichbar? und unter welchen Randbedingungen? 
 Welcher Aufwand entsteht insgesamt um das Szenario umzusetzen? Welche Entwurfsentscheidungen müssten verändert werden um
 den Aufwand für ein solches Szenario zu verringern?
+
+
+[Content](index.md) , [1. Ziele](1_Ziele.md) [9. Architekturbewertung](A_Architekturbewertung.md)
