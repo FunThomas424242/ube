@@ -80,7 +80,7 @@ hin zum Brandschutz. Kein Tier was so heißt, keine Stadt, keine Insel - also
 UBT nur im Notfall.
 
 UBE scheint mit keiner namenhaften Firma assozierbar zu sein. Dafür gibt es eine
-Stadt [Ube Ube_(Yamaguchi)) in Japan ](http://de.wikipedia.org/wiki/Ube_(Yamaguchi\)) in Japan mit welcher 
+Stadt [Ube Ube_(Yamaguchi)) in Japan ](http://de.wikipedia.org/wiki/Ube_%28Yamaguchi%29) in Japan mit welcher 
 der Name assoziert werden kann. Für Naturfreunde lässt sich auch eine 
 Assoziation zum Begriff 
 [UNESCO Biosphäre Entlebuch](http://www.biosphaere.ch/de/welcome.cfm) herstellen.
