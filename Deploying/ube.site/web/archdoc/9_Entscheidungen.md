@@ -140,6 +140,13 @@ stattfinden. Idealerweise über ein Prototyping.
 
 Entscheidung
 ------------
+27.08.2014 Es gibt ein neues OSGi Framework Karaf welches wie ein Meta Framework funktioniert. Man kann als OSGi System zwischen Apache Felix und Equinox wählen. Das Framework soll ab jetzt evaluiert werden. Mögliche Vorteile:
+* Karaf wird einmal gestartet und bietet dann eine Art Shell in der Befehle wie load project oder build ausgeführt werden könnten.
+* Karaf unterstützt out of the box die Verwendung von Artifakten aus lokalen Maven Repositories. 
+* Karaf unterstützt über ein Maven Archetype eine sehr einfache Entwicklung von neuen Shell Kommandos.
+* Karaf bietet eine Service der auf das File-System zugreifen kann. Original ist er für den Autodeploy Ordner von WebApps gedacht kann aber evtl. auch sonst genutzt werden. 
+* Karaf bietet aktuell ebenfalls schon die Möglichkeit JPA unterstützte WebApps zu entwickeln. Von daher wäre das Framework auch für die reine Entwicklung interessant. 
+* Karaf ist ein OSGi Framework damit ist es möglich von Bibliotheken mehrere Versionen zeitgleich zu installieren und über Stopp und Start von Bundles gezielt nur die Änderungen neu zu deployen was hoffentlich viel Zeit spart.
 18.11.2012 Die Realisierung des Programmes erfolgt als Mischung aus Eclipse 
 Plugins und ANT Tasks. Generell soll die Funktionalität durch ANT Tasks abgedeckt
 und erweitert werden. Die Plugins werden benötigt um die DSLs der Buildskripte
