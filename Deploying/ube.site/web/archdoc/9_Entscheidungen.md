@@ -147,6 +147,8 @@ Entscheidung
 * Karaf bietet eine Service der auf das File-System zugreifen kann. Original ist er für den Autodeploy Ordner von WebApps gedacht kann aber evtl. auch sonst genutzt werden. 
 * Karaf bietet aktuell ebenfalls schon die Möglichkeit JPA unterstützte WebApps zu entwickeln. Von daher wäre das Framework auch für die reine Entwicklung interessant. 
 * Karaf ist ein OSGi Framework damit ist es möglich von Bibliotheken mehrere Versionen zeitgleich zu installieren und über Stopp und Start von Bundles gezielt nur die Änderungen neu zu deployen was hoffentlich viel Zeit spart.
+
+
 18.11.2012 Die Realisierung des Programmes erfolgt als Mischung aus Eclipse 
 Plugins und ANT Tasks. Generell soll die Funktionalität durch ANT Tasks abgedeckt
 und erweitert werden. Die Plugins werden benötigt um die DSLs der Buildskripte
